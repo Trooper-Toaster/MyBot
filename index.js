@@ -5,7 +5,7 @@ const fs = require("fs");
 let cooldown = new Set();
 let cdseconds = 1;
 let kicks = JSON.parse(fs.readFileSync("./kicks.json", "utf8"));
-let cions = require("./coins.json",);
+
 let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
 const ytdl = require("ytdl-core");
 const bot = new Discord.Client({disableEveryone: true});
