@@ -155,23 +155,7 @@ bot.on('messageDelete', message => {
   
 message.guild.channels.find(`name`, "modlog").send(deleteEmbed);
 });
-bot.on('messageUpdate', (oldMessage, newMessage) => {
-  console.log(oldMessage.content);
-  console.log(newMessage.content);
-  
-   let editEmbed = new Discord.RichEmbed()
-.setDescription("Message Edit")
-.setColor("#f442e8")
-   .setThumbnail(newMessage.author.displayAvatarURL)
-  .setAuthor("Breezy Bot")
-.addField("Original", oldMessage.content)
-  .addField("Current", newMessage.content)
-  .addField("In Channel", newMessage.channel.name);
-  
-oldMessage.guild.channels.find(`name`, "modlog").send(editEmbed);
-  
-  
-});
+
 bot.login(process.env.TOKEN);
 
 const http = require('http');
