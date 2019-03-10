@@ -34,7 +34,7 @@ bot.on("ready",
        
        async () => {
   console.log(`${bot.user.username} is online in ${bot.guilds.size} servers`);
-  bot.user.setActivity('SortaScript', { type: 'LISTENING' });
+  bot.user.setActivity('with the Chicago Bears', { type: 'PLAYING' });
 });
 bot.commands = new Discord.Collection();
 
