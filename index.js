@@ -110,23 +110,21 @@ message.channel.send("is the best begger")
 bot.on('guildMemberAdd', member => {
   console.log('User' + member.user.tag + 'has joined the server!');
 
-  var roles = member.guild.roles.find('name', 'unverified');
+  var roles = member.guild.roles.find('name', 'Cousin');
   member.addRole(roles);
   member.sendMessage("Thanks for joing the Breezy Discord!");
   if(member.guild.id !== serverStats.guildID) return;
   
   
-  bot.channels.get(serverStats.totalUsersID).setName(`Total Users : ${member.guild.memberCount}`);
-  bot.channels.get(serverStats.memberCountID).setName(`Total Members: ${member.guild.members.filter(m => !m.user.bot).size}`);
-  bot.channels.get(serverStats.botCountID).setName(`Bot Count : ${member.guild.members.filter(m => m.user.bot).size}`);
-   let channelss= member.guild.channels.find(`name`, "welcome");
+  
+   let channelss= member.guild.channels.find(`name`, "general");
    
   
   let joinEmbed = new Discord.RichEmbed()
   .setTitle("Player Joined")
   .setThumbnail(member.displayAvatarURL)
   .setDescription(`${member} joined`)
-  .setFooter(`Say /verify to get roles`);
+  .setFooter(`Dont leak the code k thx`);
    channelss.send(joinEmbed);
  
   
@@ -135,9 +133,7 @@ bot.on('guildMemberAdd', member => {
 
 bot.on('guildMemberRemove', member => {
   member.sendMessage("Thanks for leaving the Breezy Discord!");
-  bot.channels.get(serverStats.totalUsersID).setName(`Total Users : ${member.guild.memberCount}`);
-  bot.channels.get(serverStats.memberCountID).setName(`Total Members: ${member.guild.members.filter(m => !m.user.bot).size}`);
-  bot.channels.get(serverStats.botCountID).setName(`Bot Count : ${member.guild.members.filter(m => m.user.bot).size}`);
+  
      let channelsss= member.guild.channels.find(`name`, "general")
    
    channelsss.send(`${member} has left the server`);
